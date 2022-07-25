@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>signup.html </title>
+     <meta charset="utf-8" />
+    <!-- FontAwesome Styles-->
+    <link href="static/css/font-awesome.css" rel="stylesheet">
+	 <link rel="stylesheet" href="{{url_for('static',filename = 'css/login.css') }}">
+    
+	</head>
+    <body>
+        
+    <div id="page-container">
+        <div id="image-left-container">
+        <img src="static/css/images/writing-1209121_1920.jpg" id="image-left">
+        </div>
+        
+        <div id="form-container">
+        <form  style="max-width:500px;margin:auto" method="post">
+  <h2>Register</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" name="usrnm" pattern="[a-zA-Z]+" placeholder="Username" required>
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="email" id="email" name="email" placeholder="Email"  required>
+  </div>
+  
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="psw" minlength = "8" maxlength="15" required>
+  </div>
+
+ <button type="submit" class="btn">Register</button>
+  
+               
+		<span class="psw" style="float:right; padding: 22px;">Already an existing user?<a href="{{url_for('login')}}" style="text-decoration: none; color: dodgerblue"> Login</a></span>
+			   
+</form>
+        </div>
+        </div>
+    
+    
+    </body>
+    
+    
+</html>

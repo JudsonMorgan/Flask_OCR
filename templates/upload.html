@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Upload Image</title>
+   <link rel="stylesheet" href="{{url_for('static',filename='css/login-1.css')}}">
+      <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+      <style>
+
+      </style>
+ </head>
+ <body>
+    </head>
+    <body>
+        
+        <div id="main-app">
+            <div id="header">
+            <h5 style="position: relative; left: 30px"> <i class="fa fa-align-left"></i>Handwriting Recognition</h5>
+                
+            </div>
+            <div id="dashboard" style="display: flex;">
+            <ul>
+                <li><a href= "{{url_for('upload')}}"><i class="fa fa-upload"></i>  Upload Image</a></li>
+                <li><a href="about.html"><i class="fa fa-desktop"></i>  About</a></li>
+                <li>
+                    <a href="{{url_for('login')}}"><i class="fa fa-user"></i>  Logout </a>
+					
+                </li>
+                
+                </ul>
+                <div id="home-content" style="margin-left: 20vw;">
+                
+                
+ 
+                  <!--  <center><h2>Kindly Upload Image Below To Extract Characters</h2></center>-->
+                    <div>
+            
+       {% if msg %}
+       <h1>{{ msg }}</h1>
+       {% endif %}
+      
+       <h1>Upload new File</h1>
+      
+       <form method=post enctype=multipart/form-data>
+         <p><input type=file name=file>
+            <input type=submit value=Upload>
+       </form>
+    
+       <h1>Result:</h1>
+   {% if img_src %}
+     <img src="{{ img_src }}">
+   {% endif %}
+      
+       {% if extracted_text %}
+         <p> The extracted text from the image above is: </p>
+            <div id="output" style="height: 150px; width: 70vw;
+            overflow-y: scroll;"> {{ extracted_text }} 
+          </div>
+      
+       {% else %}
+         The extracted text will be displayed here
+       {% endif %}
+              
+      </div>
+                    
+               
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

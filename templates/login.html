@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>login.html </title>
+     <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/login.css') }}">
+    <!-- FontAwesome Styles-->
+    <link href="static/css/font-awesome.css" rel="stylesheet" />
+
+    </head>
+    <body>
+      
+        
+    <div id="page-container">
+        <div id="image-left-container">
+        <img src="static/css/images/writing-1209121_1920.jpg" id="image-left">
+        </div>
+       <div id="form-container">
+        <form  style="max-width:500px;margin:auto" method="post">  
+  <h2>Login</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input type="text" class="input-field" name="username" pattern= "[a-zA-Z]+" placeholder = "username" required>
+  </div>
+
+   <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="psw"  minlength = "8" maxlength="15" required>
+  </div>
+ <button type="submit" class="btn">Login to Upload Image</button>
+                <span class="psw" style="float: right; padding: 22px;">If You don't have an account yet<a href="{{url_for('signup')}}" style="text-decoration: none; color: dodgerblue"> SignUp Here</a></span>
+</form>
+        </div>
+        
+        </div>
+    
+    
+    </body>
+    
+ </html>
